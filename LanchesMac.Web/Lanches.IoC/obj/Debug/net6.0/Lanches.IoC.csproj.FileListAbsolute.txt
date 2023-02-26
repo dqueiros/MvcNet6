@@ -1,0 +1,17 @@
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\Lanches.IoC.deps.json
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\Lanches.IoC.dll
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\Lanches.IoC.pdb
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\LanchesMac.Domain.dll
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\LanchesMac.Infra.Data.dll
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\LanchesMac.Domain.pdb
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\bin\Debug\net6.0\LanchesMac.Infra.Data.pdb
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.csproj.AssemblyReference.cache
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.AssemblyInfoInputs.cache
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.AssemblyInfo.cs
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.csproj.CoreCompileInputs.cache
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.csproj.CopyComplete
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.dll
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\refint\Lanches.IoC.dll
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\Lanches.IoC.pdb
+C:\Users\Magna\source\repos\MvcNet6\LanchesMac.Web\Lanches.IoC\obj\Debug\net6.0\ref\Lanches.IoC.dll
