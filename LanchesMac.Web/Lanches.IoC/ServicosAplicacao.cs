@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Lanches.Application.Services;
+using Lanches.Application.Services.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Lanches.IoC
 {
@@ -8,7 +10,8 @@ namespace Lanches.IoC
         {
             //TODO: registrar aqui as interfaces de serviço da camada de aplicação 
             //Exemplo:
-            //servCol.AddScoped<IAimAplServico, AimAplServico>();
+            servCol.AddScoped<ICategoriaService, CategoriaService>();
+            servCol.AddScoped<ILancheService, LancheService>();
         }
     }
 }
