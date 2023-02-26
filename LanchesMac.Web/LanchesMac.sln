@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanchesMac.Web", "LanchesMac.Web\LanchesMac.Web.csproj", "{4AE2C627-9BCE-45B2-A8AD-7674AA49EF60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanchesMac.Web", "LanchesMac.Web\LanchesMac.Web.csproj", "{4AE2C627-9BCE-45B2-A8AD-7674AA49EF60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanchesMac.Domain", "LanchesMac.Domain\LanchesMac.Domain.csproj", "{675FDD2E-26FE-4C46-8372-48C5E97FD6EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4AE2C627-9BCE-45B2-A8AD-7674AA49EF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AE2C627-9BCE-45B2-A8AD-7674AA49EF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AE2C627-9BCE-45B2-A8AD-7674AA49EF60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675FDD2E-26FE-4C46-8372-48C5E97FD6EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675FDD2E-26FE-4C46-8372-48C5E97FD6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675FDD2E-26FE-4C46-8372-48C5E97FD6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675FDD2E-26FE-4C46-8372-48C5E97FD6EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
