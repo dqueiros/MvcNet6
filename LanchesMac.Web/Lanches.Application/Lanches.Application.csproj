@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LanchesMac.Domain\LanchesMac.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanches.Database", "Lanches
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanches.IoC", "Lanches.IoC\Lanches.IoC.csproj", "{AB7F0D8B-78D2-40F4-9581-98C9A53CECEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanches.Application", "Lanches.Application\Lanches.Application.csproj", "{B95D52A8-6F1B-48F3-8C64-6B3C109B242B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AB7F0D8B-78D2-40F4-9581-98C9A53CECEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB7F0D8B-78D2-40F4-9581-98C9A53CECEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB7F0D8B-78D2-40F4-9581-98C9A53CECEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B95D52A8-6F1B-48F3-8C64-6B3C109B242B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B95D52A8-6F1B-48F3-8C64-6B3C109B242B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B95D52A8-6F1B-48F3-8C64-6B3C109B242B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B95D52A8-6F1B-48F3-8C64-6B3C109B242B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
