@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lanches.Application\Lanches.Application.csproj" />
     <ProjectReference Include="..\LanchesMac.Domain\LanchesMac.Domain.csproj" />
     <ProjectReference Include="..\LanchesMac.Infra.Data\LanchesMac.Infra.Data.csproj" />
   </ItemGroup>
