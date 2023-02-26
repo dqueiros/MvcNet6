@@ -22,12 +22,16 @@ namespace LanchesMac.Infra.Data.Repositories
 
         public async Task<ICollection<Lanche>> GetLanchesAsync()
         {
-            return await _context.Lanches.ToListAsync();
+            return await _context.Lanches
+                .Include(c => c.Categoria)
+                .ToListAsync();
         }
 
         public async Task<ICollection<Lanche>> GetLanchesPreferidosAsync()
         {
-            return await _context.Lanches.Where(p => p.IsLanchePreferido).Include("Categoria").ToListAsync();
+            return await _context.Lanches
+                .Where(p => p.IsLanchePreferido)
+                .Include(c => c.Categoria).ToListAsync();
         }
     }
 }
