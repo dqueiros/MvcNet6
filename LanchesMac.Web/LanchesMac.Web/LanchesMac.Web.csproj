@@ -10,4 +10,8 @@
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LanchesMac.Infra.Data\LanchesMac.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
