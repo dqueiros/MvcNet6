@@ -14,16 +14,7 @@ namespace LanchesMac.Web.Controllers
 
         public async Task<IActionResult> List()
         {
-            ViewData["Titulo"] = "Todos os Lanches";
-            ViewData["Data"] = DateTime.Now;
-
             var lanches = await _lancheService.GetLanchesAsync();
-            var totalLanches = lanches.Count();
-
-            ViewBag.Total = "Total de lanches : ";
-            ViewBag.TotalLanches = totalLanches;
-
-
             return View(lanches);
         }
     }
