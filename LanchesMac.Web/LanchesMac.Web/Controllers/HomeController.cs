@@ -8,6 +8,7 @@ namespace LanchesMac.Web.Controllers
     {
         public IActionResult Index()
         {
+            TempData["Nome"] = "Queiros";
             return View();
         }
 
