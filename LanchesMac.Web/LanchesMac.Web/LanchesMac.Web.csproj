@@ -11,6 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lanches.Application\Lanches.Application.csproj" />
     <ProjectReference Include="..\Lanches.IoC\Lanches.IoC.csproj" />
     <ProjectReference Include="..\LanchesMac.Infra.Data\LanchesMac.Infra.Data.csproj" />
   </ItemGroup>
