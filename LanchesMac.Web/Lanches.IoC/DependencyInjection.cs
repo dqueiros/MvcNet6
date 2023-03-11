@@ -1,5 +1,4 @@
-﻿
-using Lanches.Application.Services.Interfaces;
+﻿using Lanches.Application.Services.Interfaces;
 using Lanches.Application.Services;
 using LanchesMac.Domain.Repositories;
 using LanchesMac.Infra.Data.Context;
