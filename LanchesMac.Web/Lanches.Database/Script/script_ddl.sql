@@ -21,3 +21,11 @@ CREATE TABLE [dbo].[Lanches](
 	[CategoriaId] [int] NOT NULL,
 	CONSTRAINT FK_Categoria_Lanche FOREIGN KEY (CategoriaId) REFERENCES [dbo].[Categorias](CategoriaId)
 );
+
+CREATE TABLE [dbo].[CarrinhoCompraItens](
+	[CarrinhoCompraItemId] [int] PRIMARY KEY IDENTITY NOT NULL,
+	[LancheId] [int] NULL,
+	[Quantidade] [int] NOT NULL,
+	[CarrinhoCompraId] [UNIQUEIDENTIFIER] NULL,
+	CONSTRAINT FK_Lanche_CarrinhoCompraItem FOREIGN KEY (LancheId) REFERENCES [dbo].[Lanches](LancheId)
+);

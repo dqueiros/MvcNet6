@@ -15,5 +15,7 @@ namespace LanchesMac.Domain.Entities
 
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
+        public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
+
     }
 }

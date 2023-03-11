@@ -47,6 +47,10 @@ namespace LanchesMac.Infra.Data.Maps
 
             builder.HasOne(x => x.Categoria)
                 .WithMany(x => x.Lanches);
+
+            builder.HasMany(c => c.CarrinhoCompraItens)
+                .WithOne(p => p.Lanche)
+                .HasForeignKey(c => c.LancheId);
         }
     }
 }
