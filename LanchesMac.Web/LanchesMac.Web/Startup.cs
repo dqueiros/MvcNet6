@@ -1,5 +1,6 @@
 ﻿using Lanches.IoC;
 using LanchesMac.Infra.Data.Context;
+using LanchesMac.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LanchesMac;
@@ -19,6 +20,7 @@ public class Startup
         services.AddService(Configuration);
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
         services.AddControllersWithViews();
         

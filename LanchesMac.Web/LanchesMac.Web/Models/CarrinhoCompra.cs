@@ -15,7 +15,6 @@ namespace LanchesMac.Web.Models
 
         public Guid CarrinhoCompraId { get; set; }
         public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
-
         public static CarrinhoCompra GetCarrinho(IServiceProvider services)
         {
             //define uma sessão
@@ -37,7 +36,6 @@ namespace LanchesMac.Web.Models
                 CarrinhoCompraId = Guid.Parse(carrinhoId)
             };
         }
-
         public void AdicionarAoCarrinho(Lanche lanche)
         {
             var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
@@ -62,7 +60,6 @@ namespace LanchesMac.Web.Models
 
             _context.SaveChanges();
         }
-
         public int RemoverDoCarrinho(Lanche lanche)
         {
             var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
@@ -86,7 +83,6 @@ namespace LanchesMac.Web.Models
             _context.SaveChanges();
             return quantidadeLocal;
         }
-
         public List<CarrinhoCompraItem> GetCarrinhoItens()
         {
             return CarrinhoCompraItens ?? (CarrinhoCompraItens =
@@ -95,7 +91,6 @@ namespace LanchesMac.Web.Models
                                             .Include(s => s.Lanche)
                                             .ToList());
         }
-
         public void LimparCarrinho()
         {
             var carrinhoItens = _context.CarrinhoCompraItens
@@ -106,7 +101,6 @@ namespace LanchesMac.Web.Models
 
             _context.SaveChanges();
         }
-
         public decimal GetCarrinhoCompraTotal()
         {
             var total = _context.CarrinhoCompraItens
