@@ -4,6 +4,6 @@ namespace LanchesMac.Domain.Repositories
 {
     public interface ICategoriaRepository
     {
-        Task<ICollection<Categoria>> GetCategoriesAsync();
+        ICollection<Categoria> GetCategoriesAsync();
     }
 }

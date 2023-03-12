@@ -15,9 +15,9 @@ namespace LanchesMac.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<ICollection<Categoria>> GetCategoriesAsync()
+        public ICollection<Categoria> GetCategoriesAsync()
         {
-            return await _context.Categorias.ToListAsync();
+            return _context.Categorias.ToList();
         }
     }
 }
