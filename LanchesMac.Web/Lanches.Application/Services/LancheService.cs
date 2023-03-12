@@ -17,5 +17,10 @@ namespace Lanches.Application.Services
         {
             return await _lancheRepository.GetLanchesAsync();
         }
+
+        public async Task<ICollection<Lanche>> GetLanchesPreferidosAsync()
+        {
+            return await _lancheRepository.GetLanchesPreferidosAsync();
+        }
     }
 }
