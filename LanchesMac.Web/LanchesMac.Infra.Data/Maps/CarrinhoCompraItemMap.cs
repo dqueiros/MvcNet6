@@ -18,7 +18,7 @@ namespace LanchesMac.Infra.Data.Maps
             builder.HasKey(c => c.CarrinhoCompraId);
 
             builder.Property(c => c.LancheId).
-                HasColumnName("CategoriaId")
+                HasColumnName("LancheId")
                 .UseIdentityColumn();
 
             builder.Property(c => c.Quantidade)

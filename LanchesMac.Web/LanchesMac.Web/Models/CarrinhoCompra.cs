@@ -83,7 +83,7 @@ namespace LanchesMac.Web.Models
             _context.SaveChanges();
             return quantidadeLocal;
         }
-        public List<CarrinhoCompraItem> GetCarrinhoItens()
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
         {
             return CarrinhoCompraItens ?? (CarrinhoCompraItens =
                                             _context.CarrinhoCompraItens
