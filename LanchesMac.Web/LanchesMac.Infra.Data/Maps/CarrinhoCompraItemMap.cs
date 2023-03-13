@@ -15,11 +15,15 @@ namespace LanchesMac.Infra.Data.Maps
         {
             builder.ToTable("CarrinhoCompraItens");
 
-            builder.HasKey(c => c.CarrinhoCompraId);
+            builder.HasKey(c => c.CarrinhoCompraItemId);
 
-            builder.Property(c => c.LancheId).
-                HasColumnName("LancheId")
+            builder.Property(c => c.CarrinhoCompraItemId).
+                HasColumnName("CarrinhoCompraItemId")
                 .UseIdentityColumn();
+
+
+            builder.Property(c => c.LancheId)
+                .HasColumnName("LancheId");
 
             builder.Property(c => c.Quantidade)
                 .HasColumnName("Quantidade");

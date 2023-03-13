@@ -30,7 +30,7 @@ namespace LanchesMac.Web.Controllers
             return View(carrinhoCompraVM);
         }
 
-        public async Task<IActionResult> AdicionarItemNoCarrinho(int lancheId)
+        public async Task<IActionResult> AdicionarItemNoCarrinhoCompra(int lancheId)
         {
             var lancheSelecionado = (await _lancheService.GetLanchesAsync()).FirstOrDefault(p => p.LancheId == lancheId);
 
