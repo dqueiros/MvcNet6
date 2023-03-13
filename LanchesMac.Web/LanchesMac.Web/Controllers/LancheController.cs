@@ -41,5 +41,12 @@ namespace LanchesMac.Web.Controllers
 
             return View(lanchesListViewModel);
         }
+
+        public async Task<IActionResult> Details(int lancheId) 
+        {
+            var lanche = (await _lancheService.GetLanchesAsync()).FirstOrDefault(l => l.LancheId == lancheId);
+            return View(lanche);
+
+        }
     }
 }
