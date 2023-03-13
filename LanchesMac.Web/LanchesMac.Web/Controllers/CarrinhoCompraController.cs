@@ -32,7 +32,7 @@ namespace LanchesMac.Web.Controllers
 
         public async Task<IActionResult> AdicionarItemNoCarrinhoCompra(int lancheId)
         {
-            var lancheSelecionado = (await _lancheService.GetLanchesAsync()).FirstOrDefault(p => p.LancheId == lancheId);
+            var lancheSelecionado = _lancheService.GetLanches().FirstOrDefault(p => p.LancheId == lancheId);
 
             if (lancheSelecionado != null)
             {
@@ -44,7 +44,7 @@ namespace LanchesMac.Web.Controllers
 
         public async Task<IActionResult> RemoveItemDoCarrinhoCompra(int lancheId)
         {
-            var lancheSelecionado = (await _lancheService.GetLanchesAsync()).FirstOrDefault(p => p.LancheId == lancheId);
+            var lancheSelecionado = _lancheService.GetLanches().FirstOrDefault(p => p.LancheId == lancheId);
 
             if(lancheSelecionado != null)
             {

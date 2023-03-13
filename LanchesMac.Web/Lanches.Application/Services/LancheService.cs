@@ -13,14 +13,19 @@ namespace Lanches.Application.Services
             _lancheRepository = lancheRepository;
         }
 
-        public async Task<ICollection<Lanche>> GetLanchesAsync()
+        public Lanche GetById(int id)
         {
-            return await _lancheRepository.GetLanchesAsync();
+            return _lancheRepository.GetById(id);
         }
 
-        public async Task<ICollection<Lanche>> GetLanchesPreferidosAsync()
+        public ICollection<Lanche> GetLanches()
         {
-            return await _lancheRepository.GetLanchesPreferidosAsync();
+            return _lancheRepository.GetLanches();
+        }
+
+        public ICollection<Lanche> GetLanchesPreferidos()
+        {
+            return _lancheRepository.GetLanchesPreferidos();
         }
     }
 }

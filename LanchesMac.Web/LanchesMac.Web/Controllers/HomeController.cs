@@ -19,7 +19,7 @@ namespace LanchesMac.Web.Controllers
         {
             var homeViewModel = new HomeViewModel
             {
-                LanchesPreferidos = await _lancheService.GetLanchesPreferidosAsync()
+                LanchesPreferidos = _lancheService.GetLanchesPreferidos()
             };
 
             return View(homeViewModel);

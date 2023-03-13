@@ -15,23 +15,23 @@ namespace LanchesMac.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<Lanche> GetByIdAsync(int id)
+        public Lanche GetById(int id)
         {
-            return await _context.Lanches.FirstOrDefaultAsync(x => x.LancheId == id);
+            return _context.Lanches.FirstOrDefault(x => x.LancheId == id);
         }
 
-        public async Task<ICollection<Lanche>> GetLanchesAsync()
+        public ICollection<Lanche> GetLanches()
         {
-            return await _context.Lanches
+            return _context.Lanches
                 .Include(c => c.Categoria)
-                .ToListAsync();
+                .ToList();
         }
 
-        public async Task<ICollection<Lanche>> GetLanchesPreferidosAsync()
+        public ICollection<Lanche> GetLanchesPreferidos()
         {
-            return await _context.Lanches
+            return _context.Lanches
                 .Where(p => p.IsLanchePreferido)
-                .Include(c => c.Categoria).ToListAsync();
+                .Include(c => c.Categoria).ToList();
         }
     }
 }

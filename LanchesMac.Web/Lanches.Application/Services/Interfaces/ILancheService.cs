@@ -5,7 +5,8 @@ namespace Lanches.Application.Services.Interfaces
 {
     public interface ILancheService
     {
-        Task<ICollection<Lanche>> GetLanchesAsync();
-        Task<ICollection<Lanche>> GetLanchesPreferidosAsync();
+        ICollection<Lanche> GetLanches();
+        ICollection<Lanche> GetLanchesPreferidos();
+        Lanche GetById(int id);
     }
 }

@@ -21,12 +21,12 @@ namespace LanchesMac.Web.Controllers
 
             if (string.IsNullOrEmpty(categoria))
             {
-                lanches = (await _lancheService.GetLanchesAsync()).OrderBy(l => l.LancheId);
+                lanches = _lancheService.GetLanches().OrderBy(l => l.LancheId);
                 categoriaAtual = "Todos os lanches";
             }
             else
             {
-                lanches = (await _lancheService.GetLanchesAsync())
+                lanches = _lancheService.GetLanches()
                          .Where(l => l.Categoria.CategoriaNome.Equals(categoria))
                          .OrderBy(l => l.Nome);
 
@@ -44,7 +44,7 @@ namespace LanchesMac.Web.Controllers
 
         public async Task<IActionResult> Details(int lancheId) 
         {
-            var lanche = (await _lancheService.GetLanchesAsync()).FirstOrDefault(l => l.LancheId == lancheId);
+            var lanche = _lancheService.GetLanches().FirstOrDefault(l => l.LancheId == lancheId);
             return View(lanche);
 
         }
