@@ -26,18 +26,9 @@ namespace LanchesMac.Web.Controllers
             }
             else
             {
-                if (string.Equals("Normal", categoria, StringComparison.OrdinalIgnoreCase))
-                {
-                    lanches = (await _lancheService.GetLanchesAsync())
-                        .Where(l => l.Categoria.CategoriaNome.Equals("Normal"))
-                        .OrderBy(l => l.Nome);
-                }
-                else
-                {
-                    lanches = (await _lancheService.GetLanchesAsync())
-                         .Where(l => l.Categoria.CategoriaNome.Equals("Natural"))
+                lanches = (await _lancheService.GetLanchesAsync())
+                         .Where(l => l.Categoria.CategoriaNome.Equals(categoria))
                          .OrderBy(l => l.Nome);
-                }
 
                 categoriaAtual = categoria;
             }
