@@ -55,10 +55,12 @@ namespace LanchesMac.Models
             }
             else
             {
-                carrinhoCompraItem.Quantidade = 1;
+                carrinhoCompraItem.Quantidade++;
             }
 
             _context.SaveChanges();
         }
+
+
     }
 }
