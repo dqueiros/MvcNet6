@@ -13,7 +13,7 @@ namespace LanchesMac.Models
         }
 
         public string CarrinhoCompraId { get; set; }
-        public List<CarrinhoCompraItem> CarrinhoCompraItems { get; set; }
+        public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
 
         public static CarrinhoCompra GetCarrinho(IServiceProvider services)
         {
@@ -89,7 +89,7 @@ namespace LanchesMac.Models
 
         public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
         {
-            return CarrinhoCompraItems ?? (CarrinhoCompraItems =
+            return CarrinhoCompraItens ?? (CarrinhoCompraItens =
                                             _context.CarrinhoCompraItens
                                             .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
                                             .Include(s => s.Lanche)
