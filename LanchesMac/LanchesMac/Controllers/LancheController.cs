@@ -42,5 +42,11 @@ namespace LanchesMac.Controllers
             return View(lanchesListViewModel);
 
         }
+
+        public IActionResult Details(int lancheid)
+        {
+            var lanche = _lancheRepository.Lanches.FirstOrDefault(l => l.LancheId == lancheid);
+            return View(lanche);
+        }
     }
 }
