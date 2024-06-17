@@ -37,4 +37,35 @@ public class AdminLanchesReportController : Controller
         webReport.Report.RegisterData(categorias, "CategoriasReport");
         return View(webReport);
     }
+
+    [Route("LanchesCategoriaPDF")]
+    public async Task<ActionResult> LanchesCategoriaPDF()
+    {
+        var webReport = new WebReport();
+        var mssqlDataConnection = new MsSqlDataConnection();
+
+        webReport.Report.Dictionary.AddChild(mssqlDataConnection);
+
+        webReport.Report.Load(Path.Combine(_webHostEnv.ContentRootPath, "wwwroot/reports",
+                                           "lanchesCategoria.frx"));
+
+        var lanches = HelperFastReport.GetTable(await _relatorioLanchesService.GetLanchesReport(), "LanchesReport");
+        var categorias = HelperFastReport.GetTable(await _relatorioLanchesService.GetCategoriasReport(), "CategoriasReport");
+
+        webReport.Report.RegisterData(lanches, "LancheReport");
+        webReport.Report.RegisterData(categorias, "CategoriasReport");
+
+        webReport.Report.Prepare();
+
+        Stream stream = new MemoryStream();
+
+        webReport.Report.Export(new PDFSimpleExport(), stream);
+        stream.Position = 0;
+
+        //faz o download do pdf
+        return File(stream, "application/zip", "LancheCategoria.pdf");
+
+        //abre o pdf no navegador
+        //return new FileStreamResult(stream, "application/pdf");
+    }
 }
