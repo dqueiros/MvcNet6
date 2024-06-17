@@ -38,71 +38,93 @@ namespace LanchesMac.Areas.Admin.Controllers
                 return View(ViewData);
             }
 
-            long size = files.Sum(f => f.Length);
-
-            var filePathsName = new List<string>();
-
-            var filePath = Path.Combine(_hostingEnvironment.WebRootPath,
-                _myConfig.NomePastaImagensProdutos);
-
-            foreach (var formFile in files)
+            try
             {
-                if (formFile.FileName.Contains(".jpg") || formFile.FileName.Contains(".gif")
-                    || formFile.FileName.Contains(".png"))
+                long size = files.Sum(f => f.Length);
+
+                var filePathsName = new List<string>();
+
+                var filePath = Path.Combine(_hostingEnvironment.WebRootPath,
+                    _myConfig.NomePastaImagensProdutos);
+
+                foreach (var formFile in files)
                 {
-                    var fileNameWithPath = string.Concat(filePath, "\\", formFile.FileName);
-
-                    filePathsName.Add(fileNameWithPath);
-
-                    using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                    if (formFile.FileName.Contains(".jpg") || formFile.FileName.Contains(".gif")
+                        || formFile.FileName.Contains(".png"))
                     {
-                        await formFile.CopyToAsync(stream);
+                        var fileNameWithPath = string.Concat(filePath, "\\", formFile.FileName);
+
+                        filePathsName.Add(fileNameWithPath);
+
+                        using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                        {
+                            await formFile.CopyToAsync(stream);
+                        }
                     }
                 }
+
+                ViewData["Resultado"] = $"{files.Count} arquivos foram enviados ao servidor, " +
+                                         $"com tamanho total de : {size} bytes";
+
+                ViewBag.Arquivos = filePathsName;
+
+                return View(ViewData);
             }
-
-            ViewData["Resultado"] = $"{files.Count} arquivos foram enviados ao servidor, " +
-                                     $"com tamanho total de : {size} bytes";
-
-            ViewBag.Arquivos = filePathsName;
-
-            return View(ViewData);
+            catch (Exception ex)
+            {
+                ViewData["Erro"] = $"Erro : {ex.Message}";
+                return View(ViewData);
+            }
         }
 
         public IActionResult GetImagens()
         {
             FileManagerModel model = new FileManagerModel();
 
-            var userImagesPath = Path.Combine(_hostingEnvironment.WebRootPath,
-                _myConfig.NomePastaImagensProdutos);
-
-
-            DirectoryInfo dir = new DirectoryInfo(userImagesPath);
-
-            FileInfo[] files = dir.GetFiles();
-
-            model.PathImagesProduto = _myConfig.NomePastaImagensProdutos;
-
-            if (files.Length == 0)
+            try
             {
-                ViewData["Erro"] = $"Nenhum arquivo encontrado na pasta {userImagesPath}";
-            }
+                var userImagesPath = Path.Combine(_hostingEnvironment.WebRootPath,
+                        _myConfig.NomePastaImagensProdutos);
 
-            model.Files = files;
+
+                DirectoryInfo dir = new DirectoryInfo(userImagesPath);
+
+                FileInfo[] files = dir.GetFiles();
+
+                model.PathImagesProduto = _myConfig.NomePastaImagensProdutos;
+
+                if (files.Length == 0)
+                {
+                    ViewData["Erro"] = $"Nenhum arquivo encontrado na pasta {userImagesPath}";
+                }
+
+                model.Files = files;
+            }
+            catch (Exception ex)
+            {
+                ViewData["Erro"] = $"Erro : {ex.Message}";
+            }
 
             return View(model);
         }
 
         public IActionResult Deletefile(string fname)
         {
-            string _imagemDeleta = Path.Combine(_hostingEnvironment.WebRootPath,
-                _myConfig.NomePastaImagensProdutos + "\\", fname);
-
-            if ((System.IO.File.Exists(_imagemDeleta)))
+            try
             {
-                System.IO.File.Delete(_imagemDeleta);
+                string _imagemDeleta = Path.Combine(_hostingEnvironment.WebRootPath,
+                                            _myConfig.NomePastaImagensProdutos + "\\", fname);
 
-                ViewData["Deletado"] = $"Arquivo(s) {_imagemDeleta} deletado com sucesso";
+                if ((System.IO.File.Exists(_imagemDeleta)))
+                {
+                    System.IO.File.Delete(_imagemDeleta);
+
+                    ViewData["Deletado"] = $"Arquivo(s) {_imagemDeleta} deletado com sucesso";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewData["Erro"] = $"Erro : {ex.Message}";
             }
 
             return View("index");

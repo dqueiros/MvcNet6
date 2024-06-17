@@ -1,4 +1,5 @@
 ﻿using LanchesMac.Context;
+using LanchesMac.Migrations;
 using Microsoft.EntityFrameworkCore;
 
 namespace LanchesMac.Models
@@ -89,11 +90,25 @@ namespace LanchesMac.Models
 
         public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
         {
-            return CarrinhoCompraItens ?? (CarrinhoCompraItens =
-                                            _context.CarrinhoCompraItens
-                                            .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
-                                            .Include(s => s.Lanche)
-                                            .ToList());
+            //return CarrinhoCompraItens ?? (CarrinhoCompraItens =
+            //                                _context.CarrinhoCompraItens
+            //                                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+            //                                .Include(s => s.Lanche)
+            //                                .ToList());
+
+            if (CarrinhoCompraItens != null)
+            {
+                return CarrinhoCompraItens;
+            }
+            else
+            {
+                CarrinhoCompraItens = _context.CarrinhoCompraItens
+                        .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                        .Include(s => s.Lanche)
+                        .ToList();
+
+                return CarrinhoCompraItens;
+            }
         }
 
         public void LimparCarrinho()
